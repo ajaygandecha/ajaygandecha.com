@@ -1,0 +1,141 @@
+@use '@angular/material' as mat;
+@use './m3-theme';
+
+@include mat.core();
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/// Defines a mixim that applies custom styles for fonts based on Material 3 standards.
+/// 
+/// @param {theme} $theme: Angular Material theme to apply styles with.
+@mixin font-styles($theme) {
+    h1 {
+        font: mat.get-theme-typography($theme, headline-small, font) !important;
+        font-weight: 500 !important;
+    }
+    h2 {
+        font: mat.get-theme-typography($theme, title-large, font) !important;
+        font-weight: 500 !important;
+    }
+    h3 {
+        font: mat.get-theme-typography($theme, title-medium, font) !important;
+        font-weight: 500 !important;
+    }
+    p {
+        font: mat.get-theme-typography($theme, body-large, font);
+    }
+    strong, b {
+        font-weight: 500;
+    }
+    a {
+        color: mat.get-theme-color($theme, primary) !important;
+    }
+    .headline-medium {
+        font: mat.get-theme-typography($theme, display-medium, font);
+    } 
+    .title-large {
+        font: mat.get-theme-typography($theme, title-large, font);
+    }
+    .title-medium {
+        font: mat.get-theme-typography($theme, title-medium, font);
+    }
+    .title-small {
+        font: mat.get-theme-typography($theme, title-small, font);
+    }
+    .font-primary {
+        color: mat.get-theme-color($theme, primary) !important;
+    }
+    .font-secondary {
+        color: mat.get-theme-color($theme, secondary) !important;
+    }
+    .font-tertiary {
+        color: mat.get-theme-color($theme, tertiary) !important;
+    }
+    .font-variant {
+        color: mat.get-theme-color($theme, on-surface-variant) !important;
+    }
+}
+
+// Define custom styles
+@mixin custom-styles($theme) {
+
+    .mat-sidenav-container, .mat-sidenav {
+        background-color: mat.get-theme-color($theme, surface);
+    }
+
+    .blue-chip {
+        background-color: mat.get-theme-color($theme, secondary-container) !important;
+        color: mat.get-theme-color($theme, on-secondary-container) !important;
+    }
+
+    .dark-chip {
+        background-color: mat.get-theme-color($theme, surface-variant) !important;
+        color: mat.get-theme-color($theme, on-surface-variant) !important;
+
+    }
+
+    .mat-mdc-card {
+        background-color: mat.get-theme-color($theme, surface);
+        max-width: 640px;
+        margin: 1em;
+    }
+
+    // This is a special class definition for a stroked icon button.
+    // 
+    // Currently, the Angular Material framework does not expose a stroked icon button.
+    // So, this manually applies the same border to a regular icon button that the stroked
+    // button applies.
+    //
+    // Once Angular Material upgrades to include a stroked icon button, this can be refactored.
+    .mat-stroked-icon-button {
+        border: 1px solid mat.get-theme-color($theme, inverse-surface);
+        padding-top: 7px;
+        padding-left: 7px;
+        background-color: mat.get-theme-color($theme, surface-variant) !important;
+        color: mat.get-theme-color($theme, on-surface-variant) !important;
+        fill: mat.get-theme-color($theme, on-surface-variant) !important;
+    }
+
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 18%;
+        margin-right: 18%;
+        align-items: center;
+        max-width: 1200px;
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            width: 100%;
+        }
+    }
+
+}
+
+/// Defines a mixin that applies any manual dark mode override styles.
+@mixin apply-overrided-dark-mode-styles($theme) {
+    .mat-sidenav-container, .mat-sidenav {
+        background-color: mat.get-theme-color($theme, surface);
+    }
+}
+
+/** Apply themes and custom styling to the site. */
+html {
+
+    @include mat.all-component-themes(m3-theme.$dark-theme);
+    @include custom-styles(m3-theme.$dark-theme);
+    @include font-styles(m3-theme.$dark-theme);
+
+    @media (prefers-color-scheme: light) {
+        @include mat.all-component-themes(m3-theme.$light-theme);
+        @include custom-styles(m3-theme.$light-theme);
+        @include font-styles(m3-theme.$light-theme);
+    }
+}

@@ -1,0 +1,34 @@
+
+.mat-mdc-card {
+    max-width: 100%;
+}
+
+mat-card-header {
+    flex-direction: column;
+}
+
+::ng-deep .term-chip {
+    --mdc-chip-container-shape-radius: 16px;
+}
+
+.mat-mdc-chip {
+    height: 26px;
+}
+
+.header-column {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+.listing-title {
+    margin-top: 8px;
+}
+
+.tech-icon-chipset {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,24 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <div class="header-column">
+      <mat-chip-set>
+        <mat-chip class="term-chip blue-chip" disableRipple
+          >{{ listing.termText }}
+        </mat-chip>
+      </mat-chip-set>
+      <p class="listing-title title-medium">{{ listing.courseTitle }}</p>
+      <p class="title-small font-variant">{{ listing.position }}</p>
+      <mat-chip-set class="tech-icon-chipset">
+        @for(icon of listing.techIcons; track icon.svg) {
+        <mat-chip disableRipple class="dark-chip">
+          <mat-icon matChipAvatar svgIcon="{{ icon.svg }}"></mat-icon>
+          {{ icon.title }}
+        </mat-chip>
+        }
+      </mat-chip-set>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <p markdown>{{ listing.body }}</p>
+  </mat-card-content>
+</mat-card>

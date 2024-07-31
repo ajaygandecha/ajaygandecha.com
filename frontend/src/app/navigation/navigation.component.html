@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-toolbar>
+    <span class="name title-medium">
+      <span class="first-name">AJAY</span>&nbsp;
+      <span class="">GANDECHA</span>
+    </span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/" routerLinkActive="/">About</button>
+    <button mat-button routerLink="/teaching" routerLinkActive="/teaching">
+      Teaching
+    </button>
+    <button mat-button routerLink="/apps" routerLinkActive="/apps">Apps</button>
+    <button mat-button (click)="openBlogPage()">Blog</button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

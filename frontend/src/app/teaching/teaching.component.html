@@ -1,0 +1,47 @@
+<div class="page-container">
+  <h1>Teaching</h1>
+
+  <p>
+    I currently serve as a Student Instructor and Teaching Assistant for the UNC
+    Department of Computer Science. This page outlines my teaching experiences
+    and acts as a repository for all of the teaching materials I have developed,
+    including for courses at UNC, content on my YouTube channel, and elsewhere.
+  </p>
+
+  <h1>Instructor</h1>
+
+  <p>
+    I am fortunate to have had the opportunity to teach undergraduate students
+    at UNC! The following are courses I have served or will serve as an
+    instructor for. This section includes information about these courses
+    including the syllabus, what they taught, programming languages and tools
+    they utilized, and materials developed for students.
+  </p>
+
+  @for(listing of instructorListings; track listing.courseTitle +
+  listing.termText) {
+  <teaching-card [listing]="listing" />
+  }
+
+  <h1>Teaching Assistant</h1>
+  <p>
+    Since the Spring semester of 2023, I have served as a Teaching Assistant for
+    the UNC Computer Science department! This section includes information about
+    courses I have served as a TA for, including programming languages / tools
+    emphasized in the course. This section also includes some of my specific
+    contributions to each course.
+  </p>
+
+  @for(listing of taListings; track listing.courseTitle + listing.termText) {
+  <teaching-card [listing]="listing" />
+  }
+
+  <h1>Notes</h1>
+  <p>
+    For some of my courses at UNC, particulary math courses, I wrote detailed
+    notes covering the content taught in these courses. Many of these notes have
+    been written in LaTeX. Since I am no longer a student in these classes, I am
+    posting these notes in this section so that they might benefit others!
+  </p>
+  <notes-card />
+</div>

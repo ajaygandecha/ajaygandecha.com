@@ -1,0 +1,40 @@
+<mat-card appearance="outlined">
+  <div class="row">
+    <div class="image-column">
+      <img class="feature-image" [src]="imageUrl" />
+    </div>
+    <div class="column">
+      <mat-card-header>
+        <p class="listing-title title-medium">{{ name }}</p>
+        <mat-chip-set class="tech-icon-chipset">
+          @for(icon of platforms; track icon) {
+          <mat-chip disableRipple class="blue-chip">
+            <mat-icon matChipAvatar svgIcon="{{ icon.svg }}"></mat-icon>
+            {{ icon.title }}
+          </mat-chip>
+          }
+          <mat-divider vertical />
+          @for(icon of languages; track icon) {
+          <mat-chip disableRipple class="dark-chip">
+            <mat-icon matChipAvatar svgIcon="{{ icon.svg }}"></mat-icon>
+            {{ icon.title }}
+          </mat-chip>
+          }
+        </mat-chip-set>
+      </mat-card-header>
+      <mat-card-content>
+        <p markdown>{{ description }}</p>
+      </mat-card-content>
+    </div>
+  </div>
+  <mat-card-actions>
+    @if (secondaryButtonText) {
+    <button mat-stroked-button (click)="openUrl(secondaryButtonUrl!)">
+      {{ secondaryButtonText }}
+    </button>
+    }
+    <button mat-flat-button (click)="openUrl(actionButtonUrl)">
+      {{ actionButtonText }}
+    </button>
+  </mat-card-actions>
+</mat-card>

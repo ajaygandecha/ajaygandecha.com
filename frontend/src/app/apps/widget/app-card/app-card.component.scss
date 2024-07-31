@@ -1,0 +1,76 @@
+::ng-deep mat-card {
+   max-width: 100% !important;
+}
+
+mat-card-header {
+    flex-direction: column;
+}
+
+.mat-mdc-card-image {
+    height: 180px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+mat-card-actions {
+    gap: 8px;
+    margin-bottom: 8px;
+    justify-content: flex-end;
+}
+
+::ng-deep .term-chip {
+    --mdc-chip-container-shape-radius: 16px;
+}
+
+.mat-mdc-chip {
+    height: 26px;
+}
+
+.header-column {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+.listing-title {
+    margin-top: 8px;
+}
+
+.tech-icon-chipset {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+mat-divider {
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-image {
+    height: 176px;
+    border-radius: 12px;
+    margin-top: 12px;
+    margin-left: 12px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

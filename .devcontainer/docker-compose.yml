@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  httpd:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace
+      - ajaygandecha.com-node_modules:/workspace/frontend/node_modules
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - windir # Defined on Windows but not on other platforms
+
+volumes:
+  ajaygandecha.com-node_modules:
