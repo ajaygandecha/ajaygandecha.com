@@ -5,12 +5,37 @@
       <span class="">GANDECHA</span>
     </span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink="/" routerLinkActive="/">About</button>
-    <button mat-button routerLink="/teaching" routerLinkActive="/teaching">
-      Teaching
-    </button>
-    <button mat-button routerLink="/apps" routerLinkActive="/apps">Apps</button>
-    <button mat-button (click)="openBlogPage()">Blog</button>
+    <!-- Navigation bar (desktop) -->
+    <div class="navigation-desktop">
+      <button mat-button routerLink="/" routerLinkActive="/">About</button>
+      <button mat-button routerLink="/teaching" routerLinkActive="/teaching">
+        Teaching
+      </button>
+      <button mat-button routerLink="/apps" routerLinkActive="/apps">
+        Apps
+      </button>
+      <button mat-button (click)="openBlogPage()">Blog</button>
+    </div>
+    <!-- Navigation menu (mobile) -->
+    <div class="navigation-mobile">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/" routerLinkActive="/">About</button>
+        <button
+          mat-menu-item
+          routerLink="/teaching"
+          routerLinkActive="/teaching"
+        >
+          Teaching
+        </button>
+        <button mat-menu-item routerLink="/apps" routerLinkActive="/apps">
+          Apps
+        </button>
+        <button mat-menu-item (click)="openBlogPage()">Blog</button>
+      </mat-menu>
+    </div>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </mat-sidenav-container>

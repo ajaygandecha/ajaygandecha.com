@@ -51,6 +51,7 @@ import { MarkdownDirective } from './shared/markdown.directive';
 import { NotesCardWidget } from './teaching/widgets/notes-card/notes-card.component';
 import { AppsComponent } from './apps/apps.component';
 import { AppCardWidget } from './apps/widget/app-card/app-card.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { AppCardWidget } from './apps/widget/app-card/app-card.component';
     MatTooltipModule,
     MatCheckboxModule,
     MatSlideToggleModule,
+    MatMenuModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })
