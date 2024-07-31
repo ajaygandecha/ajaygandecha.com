@@ -10,6 +10,23 @@ mat-sidenav-container {
     font-weight: 500;
 }
 
+.name:hover {
+    cursor: pointer;
+}
+
 .first-name {
     font-weight: 600;
+}
+
+.navigation-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .navigation-desktop {
+        display: none;
+    }
+    .navigation-mobile {
+        display: block;
+    }
 }
